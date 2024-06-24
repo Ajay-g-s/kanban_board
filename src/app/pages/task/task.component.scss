@@ -1,0 +1,11 @@
+.board {
+  display: flex;
+  height: calc(100vh - 6rem);
+  overflow: auto;
+}
+
+.filter {
+  justify-content: end;
+  display: flex;
+  align-items: center;
+}

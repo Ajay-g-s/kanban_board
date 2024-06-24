@@ -1,0 +1,21 @@
+<div class="column">
+  <h2 class="column-title"> <span class="dot" [style.backgroundColor]="setDotColor(title || '')"></span>{{ title }}
+    <span class="task-count">{{tasks.length}}</span>
+    <span style="float: right;" class="cp">
+      <img src="./../../../../assets/icons/sort.png" alt="" width="25" *ngIf="isAscending"
+        (click)="sortTasks('ascending')">
+      <img src="./../../../../assets/icons/sort-descending.png" alt="" width="25" *ngIf="!isAscending"
+        (click)="sortTasks('descending')">
+    </span>
+  </h2>
+  <div cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="tasks">
+    <div *ngFor="let task of tasks" cdkDropListOrientation="horizontal">
+      <app-task-card [task]="task" cdkDrag (taskedit)="updateTask.emit($event)"
+        (taskDelete)="taskDelete.emit($event)"></app-task-card>
+
+    </div>
+    <ng-container *ngIf="!tasks.length">
+      <app-task-card></app-task-card>
+    </ng-container>
+  </div>
+</div>

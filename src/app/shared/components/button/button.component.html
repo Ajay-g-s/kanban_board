@@ -1,0 +1,6 @@
+<button type="button" (click)="action.emit()" [style.backgroundColor]="bgColor" [style.color]="color" [style.min-width]="minWidth" class="button">
+    <span *ngIf="apiLoader" class="justify-content-center text-right d-flex py-1">
+        <mat-spinner diameter="13"></mat-spinner>
+      </span>
+      <span *ngIf="!apiLoader">{{label}}</span>
+</button>

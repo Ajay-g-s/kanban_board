@@ -1,0 +1,32 @@
+<div id="mySidenav" class="sidenav">
+    <div class="container-filter">
+        <div class="item-0">
+            <div (click)="closeDrawer()">
+                <mat-icon class="cp">keyboard_backspace</mat-icon>
+            </div>
+        </div>
+        <div class="item-1">
+            <h3 class="title">Filter Task</h3>
+        </div>
+        <div class="item-2 cp" (click)="clearFilter.emit()">
+            Clear All
+        </div>
+    </div>
+    <form [formGroup]="filterForm">
+        <div class="row p-3">
+            <mat-form-field class="example-form-field">
+                <mat-label>Enter Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row m-0 p-0">
+            <div class="btnAlign">
+                <app-button mat-dialog-close [label]="'Cancel'" [bgColor]="'#F2F4F6'" [color]="'black'"
+                    (action)="close()"></app-button>
+                <app-button [label]="'Apply'" (action)="applyFilter.emit(this.filterForm.value)"></app-button>
+            </div>
+        </div>
+    </form>
+</div>

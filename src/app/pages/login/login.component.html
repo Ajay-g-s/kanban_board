@@ -1,0 +1,60 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row border rounded-5 p-3 bg-white shadow box-area">
+        <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+            style="background: var(--primary)">
+            <div class="featured-image mb-3">
+                <img src="./../../../../assets/images/1.png" class="img-fluid" style="width: 250px" />
+            </div>
+            <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600">
+                Be Verified
+            </p>
+        </div>
+        <div class="col-md-6 right-box">
+            <div class="row align-items-center">
+                <div class="header-text mb-4">
+                    <h2>Hello,Again</h2>
+                    <p>We are happy to have you back.</p>
+                </div>
+                <form [formGroup]="loginForm">
+                    <div class="input-group mb-3">
+                        <input formControlName="email" type="text" class="form-control form-control-lg bg-light fs-6"
+                            placeholder="Email" />
+                    </div>
+                    <div style="margin-top: -12px; margin-bottom: 12px" *ngIf="
+              loginForm.get('email')?.hasError('required') &&
+              loginForm.get('email')?.touched
+            " class="text-danger">
+                        <b class="mt-[-15px] mb-[12px]">Email is required</b>
+                    </div>
+                    <div style="margin-top: -12px; margin-bottom: 12px" *ngIf="
+              loginForm.get('email')?.hasError('pattern') &&
+              loginForm.get('email')?.touched
+            " class="text-danger">
+                        <b class="mt-[-15px] mb-[12px]">Enter valid email</b>
+                    </div>
+                    <div class="input-group mb-1">
+                        <input formControlName="password" type="password"
+                            class="form-control form-control-lg bg-light fs-6" placeholder="Password" />
+                    </div>
+                    <div style="margin-top: 4px; margin-bottom: 12px" *ngIf="
+              loginForm.get('password')?.invalid &&
+              loginForm.get('password')?.touched
+            " class="text-danger">
+                        <b class="mt-[-15px] mb-[12px]">Password is required</b>
+                    </div>
+                </form>
+                <div class="input-group mb-5 d-flex justify-content-between">
+                    <div class="forgot">
+                        <small>Don't have an account? <a href="/register">Register</a></small>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <button type="submit" class="btn btn-lg w-100 fs-6 text-white" style="background: var(--primary)"
+                        (click)="signIn()">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,176 @@
+.sidenav {
+  background: var(--bg);
+  transition: all .5s ease;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 5rem;
+  height: 100vh;
+  border-top-right-radius: 26px;
+  // box-shadow: 0.063rem 0.125rem 0 #eaecf1;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.938rem 0.938rem 0 0;
+
+    .logo {
+      background: var(--active);
+      text-align: center;
+      width: 2rem;
+      min-width: 2rem;
+      border-radius: 0.313rem;
+      padding: 0.313rem;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+      border: none;
+      color: var(--primary);
+      margin-left: 22px
+    }
+
+    .logo-txt {
+      margin-left: 25px;
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 14px;
+      color: var(--font-primary-color);
+    }
+
+    .btnclose {
+      margin-left: auto;
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: transparent;
+      border: none;
+    }
+
+    .fa-times {
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+}
+
+.sidenav-collapsed {
+  width: 13rem;
+}
+
+.sidenav-nav {
+  list-style: none;
+  padding: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(95% - 9.65rem);
+  cursor: pointer;
+  // margin-top: 25px;
+  padding-top: 0;
+  overflow-y: auto;
+
+  .sidenav-nav-item {
+    width: 100%;
+    margin-bottom: 0.625rem;
+
+    .sidenav-nav-link {
+      display: flex;
+      align-items: center;
+      height: 2.7rem;
+      color: var(--active);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all .3s ease;
+
+      .sidenav-link-icon {
+        font-size: 22px;
+        width: 2rem;
+        min-width: 2rem;
+        margin: 0 0.5rem;
+        text-align: center;
+        color: #fff;
+      }
+
+      .sidenav-link-text {
+        // margin-left: 1rem;
+      }
+    }
+  }
+
+  .sidenav-nav-item:hover {
+    .sidenav-nav-link {
+      background-color: var(--active-bg);
+      color: var(--active) !important;
+    }
+
+    .sidenav-link-icon {
+      color: var(--active) !important;
+    }
+  }
+}
+
+.active {
+  background: var(--active-bg);
+
+  .sidenav-link-icon,
+  .sidenav-link-text {
+    color: var(--active);
+  }
+}
+
+.menu-toggle {
+  fill: var(--active);
+}
+
+.profile-card {
+  background-color: #f2f6ff;
+  margin: 20px;
+  border-radius: 20px;
+
+  img {
+    border-radius: 50%;
+    margin-top: 2px;
+  }
+
+  .profile-align {
+    display: flex;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .role {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #abb6cb;
+  }
+
+  .name {
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+  }
+
+  .profile-name {
+    margin-left: 10px;
+    align-items: center;
+    display: flex
+  }
+}
+
+.sub-nav {
+  color: var(--active);
+}
+
+.logo-image {
+  width: 100px;
+  filter: contrast(1.75);
+}
+
+.task_icon {
+  width: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}

@@ -1,0 +1,46 @@
+<div class="row pt-3">
+  <div class="col-lg-6 col-md-6 col-sm-6 ">
+    <h2>Status Board({{filteredTasks['To Do'].length + filteredTasks['In Progress'].length +
+      filteredTasks['Done'].length + filteredTasks['Testing'].length + filteredTasks['Deployed'].length}})
+    </h2>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 filter">
+        <!-- <app-search (search)="search($event)"></app-search> -->
+        <img src="./../../../assets/icons/filter.png" width="25" alt="filter icon" class="cp" (click)="openFilter()">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <app-button [label]="'+ Add Task'" (action)="addTask()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="board mt-2" cdkDropListGroup>
+  <div>
+    <app-column [title]="'To Do'" [tasks]="filteredTasks['To Do']" (taskDropped)="onTaskDropped($event,'To Do')"
+      (updateTask)="edit($event)" (taskDelete)="deleteTask($event)"></app-column>
+  </div>
+  <div>
+    <app-column [title]="'In Progress'" [tasks]="filteredTasks['In Progress']"
+      (taskDropped)="onTaskDropped($event,'In Progress')" (updateTask)="edit($event)"
+      (taskDelete)="deleteTask($event)"></app-column>
+  </div>
+  <div>
+    <app-column [title]="'Done'" [tasks]="filteredTasks['Done']" (taskDropped)="onTaskDropped($event,'Done')"
+      (updateTask)="edit($event)" (taskDelete)="deleteTask($event)"></app-column>
+
+  </div>
+  <div>
+    <app-column [title]="'Testing'" [tasks]="filteredTasks['Testing']" (taskDropped)="onTaskDropped($event,'Testing')"
+      (updateTask)="edit($event)" (taskDelete)="deleteTask($event)"></app-column>
+
+  </div>
+  <div>
+    <app-column [title]="'Deployed'" [tasks]="filteredTasks['Deployed']"
+      (taskDropped)="onTaskDropped($event,'Deployed')" (updateTask)="edit($event)"
+      (taskDelete)="deleteTask($event)"></app-column>
+  </div>
+</div>
+<app-custom-filter [openDrawer]="openDrawer" [filterForm]="filterForm" (applyFilter)="applyFilter($event)"
+  (clearFilter)="clearFilter()"></app-custom-filter>

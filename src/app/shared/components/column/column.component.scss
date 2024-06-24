@@ -1,0 +1,36 @@
+    .column-title {
+        margin: 0;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        font-size: 14px;
+    }
+
+    .column {
+        min-width: 300px;
+        padding: 10px;
+        background: #f3f4f5;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #FFA97D;
+        display: inline-flex;
+        margin: 0 6px 1px 0;
+    }
+
+    .task-count {
+        font-size: 12px;
+        background-color: #dbdcdd;
+        color: #575859;
+        min-width: 25px;
+        height: 17px;
+        line-height: 18px;
+        padding: 0 9px;
+        border-radius: 13px;
+        width: 20;
+        display: inline-block
+    }
