@@ -9,7 +9,6 @@ import { ColumnComponent } from './components/column/column.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ButtonComponent } from './components/button/button.component';
-import { SearchComponent } from './components/search/search.component';
 import { CustomFilterComponent } from './components/custom-filter/custom-filter.component';
 
 
@@ -23,7 +22,6 @@ import { CustomFilterComponent } from './components/custom-filter/custom-filter.
     ColumnComponent,
     TaskCardComponent,
     ButtonComponent,
-    SearchComponent,
     CustomFilterComponent,
   ],
   imports: [
@@ -31,6 +29,6 @@ import { CustomFilterComponent } from './components/custom-filter/custom-filter.
     MatModule,
     DragDropModule
   ],
-  exports: [LayoutComponent, HeaderComponent, BodyComponent, SideBarComponent, ColumnComponent, TaskCardComponent, MatModule, DragDropModule, ButtonComponent, SearchComponent, CustomFilterComponent]
+  exports: [LayoutComponent, HeaderComponent, BodyComponent, SideBarComponent, ColumnComponent, TaskCardComponent, MatModule, DragDropModule, ButtonComponent, CustomFilterComponent]
 })
 export class SharedModule { }
